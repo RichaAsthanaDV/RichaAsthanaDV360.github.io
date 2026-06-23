@@ -30,11 +30,15 @@
   /* NAV */
   nav {
     position: sticky; top: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.1rem 2.5rem;
     background: rgba(13,27,42,0.96);
     backdrop-filter: blur(8px);
     border-bottom: 0.5px solid var(--border);
+  }
+  .nav-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.1rem 2.5rem;
+    max-width: 860px;
+    margin: 0 auto;
   }
   .nav-logo {
     font-family: 'Space Grotesk', sans-serif;
@@ -96,9 +100,11 @@
     gap: 1px;
     background: var(--border);
     border: 0.5px solid var(--border);
-    margin: 3rem 2.5rem;
+    margin: 3rem auto;
     border-radius: 10px;
     overflow: hidden;
+    max-width: 860px;
+    width: calc(100% - 5rem);
   }
   .stat {
     background: var(--navy);
@@ -127,7 +133,12 @@
     padding: 3rem 2.5rem;
     border-top: 0.5px solid rgba(255,255,255,0.05);
     max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
+  section h2 { text-align: left; }
+  section.center-heading h2 { text-align: center; }
   .section-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px; color: var(--cyan);
@@ -427,6 +438,8 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px; color: var(--slate);
     letter-spacing: 0.06em;
+    max-width: 860px;
+    margin: 0 auto;
   }
   .cursor {
     display: inline-block; width: 2px; height: 1em;
@@ -453,13 +466,15 @@
 <body>
 
 <nav>
-  <div class="nav-logo">RA / Programmatic</div>
-  <ul class="nav-links">
-    <li><a href="#programmatic">Programmatic</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div class="nav-inner">
+    <div class="nav-logo">RA / Programmatic</div>
+    <ul class="nav-links">
+      <li><a href="#programmatic">Programmatic</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -920,7 +935,7 @@
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
+<section id="skills" class="center-heading">
   <div class="section-label">// 04 · Skills</div>
   <h2>Tools and capabilities</h2>
 
@@ -988,7 +1003,7 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="center-heading">
   <div class="section-label">// 05 · Contact</div>
   <h2>Let's talk programmatic.</h2>
   <p class="body-text">
